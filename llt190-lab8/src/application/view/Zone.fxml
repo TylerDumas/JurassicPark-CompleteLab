@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.ZoneController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#909090" height="40.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="800.0" />
+      <Pane prefHeight="800.0" prefWidth="800.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d1d1d1b9" height="100.0" layoutX="9.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="275.0" />
+            <ImageView fx:id="background" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" />
+            <Label fx:id="zoneLabel" layoutX="66.0" layoutY="60.0" prefHeight="92.0" prefWidth="506.0">
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="30.0" />
+               </font>
+            </Label>
+            <Button layoutX="677.0" layoutY="60.0" mnemonicParsing="false" onAction="#handle" prefHeight="30.0" prefWidth="75.0" text="HOME">
+               <font>
+                  <Font name="Lucida Sans Regular" size="16.0" />
+               </font>
+            </Button>
+            <ListView fx:id="listOfDinos" layoutX="300.0" layoutY="200.0" prefHeight="300.0" prefWidth="400.0" />
+            <Label layoutX="23.0" layoutY="246.0" prefHeight="25.0" prefWidth="133.0" text="# of Dinosaurs:">
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="numberOfDinos" layoutX="164.0" layoutY="246.0" prefHeight="25.0" text="#">
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="280.0" prefHeight="25.0" prefWidth="133.0" text="Threat Level:  ">
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="riskLabel" layoutX="164.0" layoutY="280.0" prefHeight="25.0" text="(insert risk)">
+               <font>
+                  <Font name="Lucida Sans Typewriter Bold" size="14.0" />
+               </font>
+            </Label>
+            <Pane layoutX="85.0" layoutY="546.0" prefHeight="200.0" prefWidth="275.0">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9090905e" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="275.0" />
+                  <TextField fx:id="newDinoNameField" layoutX="95.0" layoutY="40.0" />
+                  <Label layoutX="50.0" layoutY="10.0" text="Add a dino to this zone">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="45.0" text="Name:">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newDinoTypeField" layoutX="95.0" layoutY="89.0" />
+                  <Label layoutX="33.0" layoutY="94.0" text="Type:">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="yesButton" layoutX="129.0" layoutY="133.0" mnemonicParsing="false" text="Yes">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="noButton" layoutX="196.0" layoutY="133.0" mnemonicParsing="false" text="No">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <Label layoutX="33.0" layoutY="133.0" text="Carnivore?:">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="215.0" layoutY="164.0" mnemonicParsing="false" onAction="#addButton" text="ADD">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="440.0" layoutY="546.0" prefHeight="200.0" prefWidth="275.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9090905e" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="275.0" />
+                  <Button layoutX="176.0" layoutY="163.0" mnemonicParsing="false" onAction="#relocateButton" text="RELOCATE">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="33.0" layoutY="45.0" text="Name:">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="relocateNameField" layoutX="95.0" layoutY="40.0" />
+                  <Label layoutX="10.0" layoutY="94.0" text="Zone Code:">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newZoneCodeField" layoutX="95.0" layoutY="86.0" prefHeight="27.0" prefWidth="38.0" />
+                  <Label layoutX="23.0" layoutY="7.0" text="Relocate a dino to a new zone">
+                     <font>
+                        <Font name="Lucida Sans Typewriter Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Pane>
+            <Label fx:id="addSuccess" layoutX="126.0" layoutY="759.0" text="Successfully Added Dino!" visible="false">
+               <font>
+                  <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="relocateSuccess" layoutX="466.0" layoutY="759.0" text="Successfully Relocated Dino!" visible="false">
+               <font>
+                  <Font name="Lucida Sans Typewriter Regular" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="101.0" layoutY="389.0" mnemonicParsing="false" onAction="#viewDinos" prefHeight="67.0" prefWidth="142.0" text="View Dinosaurs">
+               <font>
+                  <Font name="Futura Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

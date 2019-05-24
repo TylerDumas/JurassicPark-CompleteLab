@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DinosaurController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="800.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="633.0" layoutY="48.0" mnemonicParsing="false" onAction="#handle" prefHeight="41.0" prefWidth="93.0" text="HOME">
+               <font>
+                  <Font name="Futura Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="zoneLabel" layoutX="121.0" layoutY="32.0" prefHeight="80.0" prefWidth="367.0" text="Dinosaur Zone">
+               <font>
+                  <Font name="Futura Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="dinoImage" fitHeight="402.0" fitWidth="371.0" layoutX="212.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="dinoName" alignment="CENTER" layoutX="290.0" layoutY="614.0" prefHeight="61.0" prefWidth="207.0" text="Dinosaur Name">
+               <font>
+                  <Font name="Futura Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="dinoType" alignment="CENTER" layoutX="300.0" layoutY="680.0" prefHeight="46.0" prefWidth="196.0" text="Dinosaur Type" textAlignment="CENTER">
+               <font>
+                  <Font name="Futura Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
